@@ -1,0 +1,280 @@
+@import "common";
+
+//----pre-show----
+@keyframes preShow-loading {
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.preShow-loading{
+  padding: 10px 0;
+  text-align: center;
+}
+.preShow-loading > div {
+  background-color: #f25824;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 2px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: inline-block;
+  -webkit-animation: preShow-loading 2s infinite;
+  animation: preShow-loading 2s infinite;
+}
+.preShow-loading > div:nth-child(1) {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+.preShow-loading > div:nth-child(2) {
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+#app-preShow{
+  position: absolute;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+#app-preShow h1{
+  padding-top: 40%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #f25824;
+}
+.app-preShow-word{
+  text-align: center;
+  font-size: 1.5rem;
+  color: #595959;
+}
+.app-logo{
+  margin: 50% auto 0;
+  width: px2rem(184px);
+  height: px2rem(71px);
+
+  @extend %ui-icon-url;
+  @extend %ui-icon-dzcLogo;
+  background-repeat: no-repeat;
+  background-size: px2rem($iconWidth) auto;
+}
+//顶部
+//.header{
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  height: $headerHeight;
+//  line-height: $headerHeight;
+//  text-align: center;
+//  z-index: $zIndexHeader;
+//  background: #fff;
+//  border-bottom: 1px solid $borderColor;
+//}
+//.header .backbtn, .header .rightbtn{
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  padding: 0 .5rem;
+//  height: 130%;
+//  min-width: 3.5rem;
+//  color: $grayDarker;
+//  line-height: $headerHeight;
+//  font-size: 1.25rem;
+//}
+//.header .rightbtn{
+//  left: auto;
+//  right: 0;
+//}
+//.header h1{
+//  @extend %ellipsis;
+//  line-height: $headerHeight;
+//}
+
+.view{
+  position: relative;
+  padding-bottom: px2rem($navHeight);
+}
+//.viewCover{
+//  position: absolute;
+//  top: 0;
+//  left:0;
+//  width: 100%;
+//  height: 100%;
+//  z-index: $zIndexViewcover;
+//}
+.view .pageWrap{
+  position: absolute;
+  //top: $headerHeight;
+  left:0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+//  .pageContent{
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    min-height: 100%;
+//    background: $bgColor2;
+//    -webkit-backface-visibility: hidden;
+//    transform: translateZ(0px);
+//  }
+}
+.main .ui-banner{
+  height: px2rem(284px);
+}
+.main .prdlist{
+  padding: px2rem(24px);
+}
+//---------loading progress----
+@keyframes progress_loading{
+  0%{width:0}
+  7%{width:0}
+  10%{width:10%}
+  20%{width:40%}
+  30%{width:60%}
+  40%{width:75%}
+  50%{width:80%}
+  55%{width:82%}
+  60%{width:84%}
+  65%{width:86%}
+  70%{width:88%}
+  75%{width:90%}
+  80%{width:91%}
+  85%{width:92%}
+  90%{width:93%}
+  95%{width:94%}
+  100%{width:95%}
+}
+.loading-progress {
+  width: 100%;
+  height: 2px;
+  margin-bottom: -2px;
+  background-color: transparent;
+}
+.loading-progress.show{
+  width: 95%;
+  background-color: #27cdf2;
+  -webkit-animation: progress_loading 5s linear;
+  -moz-animation: progress_loading 5s linear;
+  animation: progress_loading 5s linear;
+}
+
+//-----------页面切换--------
+.transleft-leave, .transrightback-leave{
+  animation: transrightout 1s ease;
+}
+.transleft-enter, .transrightback-enter{
+  animation: transleftin 1s ease;
+}
+.transright-leave, .transleftback-leave{
+  animation: transleftout 1s ease;
+}
+.transright-enter, .transleftback-enter{
+  animation: transrightin 1s ease;
+}
+.aboveleave{
+  animation: aboveleave .4s ease;
+}
+.abovein{
+  animation: abovein .4s ease;
+}
+
+.anm_fade-enter{
+  animation: showIn .4s ease;
+}
+.anm_fade-leave{
+  animation: hideOut .4s ease;
+}
+
+#test{
+  display: none;
+  position: absolute;
+  z-index: 100000;
+  top: 0;
+  left:0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+
+//-------------------view-home-----------------
+.view-home{
+
+  .list{
+    margin: px2rem($baseGap * 2) 0;
+    background-color: $white;
+    padding: 0 px2rem($baseGap);
+
+    .item{
+      position: relative;
+      padding: px2rem($baseGap) 0 px2rem($baseGap / 4);
+      border-bottom: 1px solid $borderColor;
+
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+
+    .img{
+      float: left;
+      margin-right: px2rem(-200px);
+      width: px2rem(200px);
+      height: px2rem(140px);
+    }
+
+    .buy{
+      position: absolute;
+      top: px2rem(112px);
+      right: 0;
+    }
+
+    .dfn{
+      color: $grayLight;
+    }
+
+    .level{
+      position: absolute;
+      top: px2rem($baseGap);
+      right: 0;
+      font-size: px2rem($fontS);
+      line-height: px2rem($fontS * 1.3);
+      color: $yellow;
+    }
+
+    .info{
+      margin-bottom: px2rem($baseGap / 2);
+      padding-left: px2rem(200px + $baseGap);
+      color: $gray;
+      font-size: px2rem($fontX);
+
+      h6{
+        margin-right: px2rem($baseSize * 4);
+        color: $textColor;
+        font-size: px2rem($fontS);
+        line-height: px2rem($fontS * 1.3);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .p1{
+        line-height: 3rem;
+      }
+    }
+  }
+}

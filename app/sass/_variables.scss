@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------	
+// setting scss
+//-----------------------------------------------------	
+
+// font相关
+//-----------------------------------------------------
+$baseSize:                       24px !default;
+$baseLineHeight:                 1.5 !default;
+$baseFont:                       "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif !default;
+
+// 元素上下间距
+//-----------------------------------------------------	
+$baseGap:                        20px !default;
+
+// header,footer等的高度
+//-----------------------------------------------------
+$navHeight:                      72px;
+
+
+
+// gray
+$black:                          black !default;
+$grayDark:                       #3d3e40 !default;
+$gray:                           #6e7073 !default;
+$grayLight:                      #9fa2a6 !default;
+$white:                          white !default;
+
+$primary:                        #339933 !default;
+$yellow:                         #F9AA56 !default;
+
+// link
+$linkColor :                      #08c !default;
+
+// scaffolding
+//-----------------------------------------------------	
+$bgColor:                        #f5f5f5 !default;
+$textColor:                      #3d3e40 !default;
+$borderColor:                    #eee !default;
+
+// placeholder
+//-----------------------------------------------------	
+// 变量分别为：是否输出表单的占位符placeholder样式，文本色
+$placeholder:                    true $gray !default;
+
+
+
+// radius
+//-----------------------------------------------------	
+$radiusBase:                     8px !default;
+
+// z-index
+//-----------------------------------------------------	
+
+$zIndexHeader:                   940 !default;
+$zIndexFooter:                   900 !default;
+$zIndexOverlay:                  980 !default;  // 默认高于header和footer部分
+$zIndexConfirm:                 1000 !default;  //弹出框
+$zIndexWarn:                   10000 !default;  //提示消息
+
+
+//-----------------------------------------------------
+$fontX:                          24px !default;
+$fontS:                          28px !default;
+$fontM:                          32px !default;
+$fontL:                          36px !default;

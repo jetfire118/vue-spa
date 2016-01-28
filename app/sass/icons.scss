@@ -1,0 +1,35 @@
+%c_icon_url{
+background-image: url("../img/icons/sprite.png");
+}
+
+$iconWidth : 130px;
+
+    .c_icon_list {
+    background-position: px2rem(0px) px2rem(0px);
+    }
+    %c_icon_list {
+    background-position: px2rem(0px) px2rem(0px);
+    }
+    .c_icon_my {
+    background-position: px2rem(-70px) px2rem(0px);
+    }
+    %c_icon_my {
+    background-position: px2rem(-70px) px2rem(0px);
+    }
+
+
+.c_icon60, .c_icon40{
+display: inline-block;
+margin: auto;
+vertical-align: middle;
+width: px2rem(60px);
+height: px2rem(60px);
+@extend %c_icon_url;
+background-repeat: no-repeat;
+background-size: px2rem($iconWidth) auto;
+}
+.c_icon40{
+transform: scale(0.666667);
+margin-top: px2rem(-10px);
+margin-bottom: px2rem(-10px);
+}

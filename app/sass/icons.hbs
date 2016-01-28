@@ -1,0 +1,31 @@
+%c_icon_url{
+background-image: url("../img/icons/{{spritesheet.escaped_image}}");
+}
+
+$iconWidth : {{spritesheet.px.width}};
+
+{{#sprites}}
+    .c_icon_{{name}} {
+    background-position: px2rem({{px.offset_x}}) px2rem({{px.offset_y}});
+    }
+    %c_icon_{{name}} {
+    background-position: px2rem({{px.offset_x}}) px2rem({{px.offset_y}});
+    }
+{{/sprites}}
+
+
+.c_icon60, .c_icon40{
+display: inline-block;
+margin: auto;
+vertical-align: middle;
+width: px2rem(60px);
+height: px2rem(60px);
+@extend %c_icon_url;
+background-repeat: no-repeat;
+background-size: px2rem($iconWidth) auto;
+}
+.c_icon40{
+transform: scale(0.666667);
+margin-top: px2rem(-10px);
+margin-bottom: px2rem(-10px);
+}

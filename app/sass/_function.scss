@@ -1,0 +1,5 @@
+@charset "UTF-8";
+//px转rem
+@function px2rem($px: 24px) {
+  @return #{$px/$baseSize}rem;
+}

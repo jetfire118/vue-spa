@@ -1,0 +1,8 @@
+{{#sprites}}
+.spr-{{../options.fname}}-{{name}} {
+    width: px2rem({{px.width}});
+    height: px2rem({{px.height}});
+    background: url("..{{../options.imgPath}}/sprite.png") px2rem({{px.offset_x}}) px2rem({{px.offset_y}}) no-repeat;
+    background-size: px2rem({{px.total_width}}) auto;
+}
+{{/sprites}}

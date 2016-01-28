@@ -1,0 +1,514 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------  
+// reset scss
+// 包括normalize，清零重置
+//-----------------------------------------------------
+
+// normalize 3.1
+// http://necolas.github.io/normalize.css/
+//-----------------------------------------------------
+
+
+// set height 100%.
+html,
+body {
+    height: 100%;
+}
+
+// 0. sandal's style.
+// 1. Prevent iOS text size adjust after orientation change, without disabling user zoom.
+html {
+    font-family: $baseFont; // 0
+    -ms-text-size-adjust: 100%; // 1
+    -webkit-text-size-adjust: 100%; // 1
+
+    margin: 0 auto;
+    font-size:9px;
+    min-width: 280px;
+    max-width: 960px;
+    overflow: hidden;
+}
+
+@media all and (min-width: 0) {
+    html {
+        font-size: 10.5px;
+    }
+}
+@media all and (min-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media all and (min-width: 360px) {
+    html {
+        font-size: 13.5px;
+    }
+}
+@media all and (min-width: 375px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media all and (min-width: 384px) {
+    html {
+        font-size: 14.4px;
+    }
+}
+@media all and (min-width: 414px) {
+    html {
+        font-size: 15.525px;
+    }
+}
+@media all and (min-width: 440px) {
+    html {
+        font-size: 16.5px;
+    }
+}
+@media all and (min-width: 480px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media all and (min-width: 540px) {
+    html {
+        font-size: 20.25px;
+    }
+}
+@media all and (min-width: 600px) {
+    html {
+        font-size: 22.5px;
+    }
+}
+@media all and (min-width: 640px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+body {
+    -webkit-overflow-scrolling: touch; // 滚动更流畅
+    -webkit-user-select:none;   //禁止文字选中
+    -webkit-touch-callout:none; //系统默认菜单被禁用
+    -webkit-tap-highlight-color: transparent;   //去掉点击闪动
+    -ms-touch-action: manipulation; //ie10去掉点击触发延迟
+    touch-action: manipulation; //ie11去掉点击触发延迟
+    word-break: break-all;  //使英文和数字自动换行
+    margin: 0; // 1
+    line-height: $baseLineHeight; // 0
+    color: $textColor; // 0
+    background-color: $bgColor; // 0
+    overflow-x: hidden;
+}
+
+// HTML5 display definitions
+//-----------------------------------------------------
+
+// Correct `block` display not defined for any HTML5 element in IE 8/9.
+// Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+// Correct `block` display not defined for `main` in IE 11.
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+// 1. Correct `inline-block` display not defined in IE 8/9.
+// 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+audio,
+canvas,
+progress,
+video {
+    display: inline-block; // 1
+    vertical-align: baseline; // 2
+}
+
+// Prevent modern browsers from displaying `audio` without controls.
+// Remove excess height in iOS 5 devices.
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+// Address `[hidden]` styling not present in IE 8/9/10.
+// Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+[hidden],
+template {
+    display: none;
+}
+
+// Links
+//-----------------------------------------------------
+
+// 1. Remove the gray background color from active links in IE 10.
+// 2. Improve readability when focused and also mouse hovered in all browsers.
+// 0. sandal's style.
+a {
+    background: transparent; // 1
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    &:active {
+        outline: 0; // 2
+    }
+    @if length($linkColor) > 1 {
+        color: nth($linkColor, 1);
+        &:active {
+            color: nth($linkColor, 2);
+        }
+    }
+    @else {
+        color: $linkColor;
+        &:active {
+            color: darken($linkColor, 10%);
+        }
+    }
+}
+
+
+// Text-level semantics
+//-----------------------------------------------------
+
+// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+b,
+strong {
+    font-weight: bold;
+}
+
+// Address styling not present in Safari and Chrome.
+dfn {
+    font-style: italic;
+}
+
+// Address styling not present in IE 8/9.
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+    font-size: 80%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+// Embedded content
+//-----------------------------------------------------
+
+// 1. Remove border when inside `a` element in IE 8/9/10.
+// 2. Improve image quality when scaled in IE 7.
+// 0. sandal's style.
+img {
+    border: 0; // 1
+    vertical-align: middle; // 0
+}
+
+// Correct overflow not hidden in IE 9/10/11.
+svg:not(:root) {
+    overflow: hidden;
+}
+
+// Grouping content
+//-----------------------------------------------------
+
+// 1. Contain overflow in all browsers.
+// 2. Improve readability of pre-formatted text in all browsers.
+pre {
+    overflow: auto; // 1
+    white-space: pre; // 2
+    white-space: pre-wrap; // 2
+    word-wrap: break-word; // 2
+}
+
+// 1. Address odd `em`-unit font size rendering in all browsers.
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace; // 1
+    font-size: 1em; // 2
+}
+
+// Forms
+//-----------------------------------------------------
+
+// Known limitation: by default, Chrome and Safari on OS X allow very limited
+// styling of `select`, unless a `border` property is set.
+
+// 1. Correct color not being inherited.
+//    Known issue: affects color of disabled elements.
+// 2. Correct font properties not being inherited.
+// 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit; // 1
+    font: inherit; // 2
+    margin: 0; // 3
+}
+
+// Address `overflow` set to `hidden` in IE 8/9/10/11.
+button {
+    overflow: visible;
+}
+
+// Address inconsistent `text-transform` inheritance for `button` and `select`.
+// All other form control elements do not inherit `text-transform` values.
+// Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+// Correct `select` style inheritance in Firefox.
+button,
+select {
+    text-transform: none;
+}
+
+// 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+//    and `video` controls.
+// 2. Correct inability to style clickable `input` types in iOS.
+// 3. Improve usability and consistency of cursor style between image-type
+//    `input` and others.
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; // 2
+    cursor: pointer; // 3
+}
+
+// Re-set default cursor for disabled elements.
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+// Remove inner padding and border in Firefox 4+.
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+// 1. Address Firefox 4+ setting `line-height` on `input` using `!important` in
+//    the UA stylesheet.
+// 0. clear webkit add style
+input {
+    line-height: normal; // 1
+    &:focus {
+        outline: 0 none; // 0
+    }
+}
+
+// It's recommended that you don't attempt to style these elements.
+// Firefox's implementation doesn't respect box-sizing, padding, or width.
+
+// 1. Address box sizing set to `content-box` in IE 8/9/10.
+// 2. Remove excess padding in IE 8/9/10.
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; // 1
+    padding: 0; // 2
+}
+
+// Fix the cursor style for Chrome's increment/decrement buttons. For certain
+// `font-size` values of the `input`, it causes the cursor style of the
+// decrement button to change from `default` to `text`.
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+// 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+// 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+//    (include `-moz` to future-proof).
+input[type="search"] {
+    -webkit-appearance: textfield; // 1
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; // 2
+    box-sizing: border-box;
+}
+
+// Remove inner padding and search cancel button in Safari and Chrome on OS X.
+// Safari (but not Chrome) clips the cancel button when the search input has
+// padding (and `textfield` appearance).
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+// input's clear or reveal in IE 10+
+input::-ms-clear,
+input::-ms-reveal {
+    display: none;
+}
+
+// Define consistent border, margin, and padding.
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+// 1. Correct `color` not being inherited in IE 8/9/10/11.
+// 2. Remove padding so people aren't caught out if they zero out fieldsets.
+legend {
+    border: 0; // 1
+    padding: 0; // 2
+}
+
+// 1. Remove default vertical scrollbar in IE 8/9/10/11.
+// 0. sandal's style
+textarea {
+    overflow: auto; // 1
+    resize: vertical; // 0
+}
+
+// Don't inherit the `font-weight` (applied by a rule above).
+// NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+optgroup {
+    font-weight: bold;
+}
+
+// Tables
+//-----------------------------------------------------
+// Remove most spacing between table cells.
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+// 根据使用习惯，对normalize上进行补充
+//-----------------------------------------------------
+button,
+input,
+select,
+textarea {
+    font-family: $baseFont;
+}
+
+h1,h2,h3,h4,h5,h6,p,figure,form,blockquote {
+    margin: 0;
+}
+
+// ul ol dl
+ul,ol,li,dl,dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol {
+    list-style: none outside none;
+}
+
+// hn
+h1, h2, h3, h4, h5, h6 {
+    line-height: 2;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+p{
+
+}
+// icon 
+i {
+    font-style: normal;
+}
+
+// Android 下 input focus 消除高亮外框
+textarea, input {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);    
+    -webkit-user-modify: read-write-plaintext-only;
+    outline: none !important;
+}
+
+// 表单placeholder样式
+// 注意不可联合申明，否则无效
+@if nth($placeholder, 1) {
+    // Firefox 19+
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        color: nth($placeholder, 2);
+    }
+    // Internet Explorer 10+
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: nth($placeholder, 2);
+    }
+    // Safari and Chrome
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: nth($placeholder, 2);
+    }
+}
+
+// 所有元素为border-box
+* {
+    box-sizing: border-box;
+}
+
+// 清除子元素浮动
+.clearfix {
+    @extend %clearfix;
+}
+*:active, *:focus{
+    outline: none;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;    /* 上下小箭头按钮 */
+}
