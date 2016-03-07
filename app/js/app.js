@@ -13,6 +13,7 @@ import conFirm from './cpn/confirm.vue'
 //=========================views==========================
 import App from './view/App.vue'
 import home from './view/home.vue'
+import order from './view/order.vue'
 import pageA from './view/pageA.vue'
 import my from './view/my.vue'
 import NewsView from './cpn/NewsView.vue'
@@ -45,6 +46,10 @@ router.map({
     '/home':{
         component: home,
         title: '首页'
+    },
+    '/order':{
+        component: order,
+        title: '下单'
     },
     '/pageA': {
         component: pageA,

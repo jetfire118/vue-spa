@@ -1,7 +1,7 @@
-const baseUrl = 'https://dzc-trading.fangdd.com/dzc-trading/api/';
+const baseUrl = 'https://localhost/';
 const api = {
     homelist: baseUrl + 'product/homePageList',
-    cityQueryNew: 'https://ddhui.fangdd.com/ddbao-mobile/city/cityQueryNew'
+    cityQueryNew: 'cityQueryNew'
 };
 
 export default api;
