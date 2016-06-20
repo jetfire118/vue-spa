@@ -17,7 +17,7 @@ var argv = require('yargs')
 
 var minifyHtml = require('gulp-minify-html');
 var sass = require('gulp-sass');
-var minifyCss 	= require('gulp-minify-css');
+var minifyCss 	= require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 var del = require('del');   //删除文件
 var insert 		= require('gulp-insert');   //文件插入

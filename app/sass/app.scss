@@ -64,8 +64,7 @@
   width: px2rem(184px);
   height: px2rem(71px);
 
-  @extend %ui-icon-url;
-  @extend %ui-icon-dzcLogo;
+  @extend %c_icon_url;
   background-repeat: no-repeat;
   background-size: px2rem($iconWidth) auto;
 }
