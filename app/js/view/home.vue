@@ -40,14 +40,13 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Vue from 'vue'
+import {incrementCounter} from '../vuex/actions.js'
 import api from '../api'
 import banner from '../cpn/banner.vue'
 
 export default {
 
     name: 'home',
-
     components: {
         banner: banner
     },
@@ -79,7 +78,11 @@ export default {
 //            })
         }
     },
+    vuex: {
+        actions: {
 
+        }
+    },
     created () {
         console.log(new Date().getTime()+'created');
     },
@@ -89,9 +92,6 @@ export default {
     },
 
     ready () {
-        console.log(this.listOne);
-        console.log(this.listTwo);
-        console.log(this.listThree);
         console.log(new Date().getTime()+'ready');
     },
 

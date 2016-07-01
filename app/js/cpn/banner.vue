@@ -23,7 +23,7 @@
                 type: Object,
                 default: function (){
                     return [
-                        {href:'', url:'./img/tmp.png'}
+                        {href:'', url:'./img/tmp.jpg'}
                     ]
                 }
             }

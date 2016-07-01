@@ -4,7 +4,9 @@
         <div class="cp_confirm_flex">
             <div class="cp_confirm_con">
                 <div class="cp_confirm_title"></div>
-                <div class="cp_confirm_body">{{content}}</div>
+                <div class="cp_confirm_body">
+                    <slot name="content"></slot>
+                </div>
                 <div class="cp_confirm_btn">
                     <div class="btn c_yellow" @click="sure">{{sureText}}</div>
                     <div class="btn"  @click="cancel">{{cancelText}}</div>

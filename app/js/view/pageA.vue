@@ -7,12 +7,11 @@
                 :is-show.sync="showConfirm"
                 :sure-text="'知道了'"
                 @cancel="cancelConfirm"
-                @confirm="confirm">
+                @confirm="confirm">对所发生的
         </confirm>
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import Vue from 'vue'
     import api from '../api'
     import {eventKey, alertMsg} from '../util'
     import someCpn from  '../cpn/someCpn.vue'
@@ -29,7 +28,7 @@
         },
         route: {
             data () {   //获取数据
-                alertMsg('哈哈')
+                //alertMsg('哈哈')
             }
         },
         ready () {

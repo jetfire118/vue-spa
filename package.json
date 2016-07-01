@@ -1,11 +1,11 @@
 {
-  "name": "vue-gulp-spa",
+  "name": "vue-spa",
   "version": "1.0.0",
   "description": "singer page app for mobile",
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp test",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": ""
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "author": "jetfire118",
   "license": "MIT",
-  "homepage": "https://github.com/jetfire118/vue-gulp-spa",
+  "homepage": "https://github.com/jetfire118/vue-spa",
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "vue": "^1.0.8",
+    "vuex": "^0.8.2",
     "vue-router": "^0.7.5",
     "vue-resource": "^0.5.0"
   }
