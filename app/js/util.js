@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import store from './vuex/store.js' //应用的store对象
+
 //公共事件名
 export const eventKey = {
   ROUTER_CHANGE: 'router-change',
@@ -12,7 +12,6 @@ export const alertMsg = function(msg) {
       msg: msg
     },
     template: '<div class="cp_alertMsg" transition="anm_fade">{{msg}}</div>',
-    store: store,
     ready: function() {
       var _this = this;
       setTimeout(function() {

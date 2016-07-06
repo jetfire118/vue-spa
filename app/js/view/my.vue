@@ -6,6 +6,9 @@
 
 <script type="text/ecmascript-6">
     export default {
+        ready () {
+            console.log('e');
+        },
         methods: {
             goback () {
                 this.$route.router.replace('home')

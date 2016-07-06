@@ -11,6 +11,7 @@
 </template>
 <script type="text/ecmascript-6">
     import store from '../vuex/store.js' //应用的store对象
+    import {setNavType} from '../vuex/actions.js'
 
     import {eventKey} from '../util'
     import myNav from  '../cpn/myNav.vue'
@@ -27,10 +28,18 @@
         },
         compiled () {
             var _this = this;
-            this.$route.router.afterEach(function(){
-                _this.$broadcast(eventKey.ROUTER_CHANGE);
+            this.$route.router.afterEach(function({to, from}){
+                //设置导航状态
+                if (typeof to.navType != undefined) {
+                    _this.setNavType(to.navType)
+                }
             })
-        }
+        },
+        vuex: {
+            actions: {
+                setNavType: setNavType
+            }
+        },
     }
 
 </script>

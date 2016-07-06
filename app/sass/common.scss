@@ -1,5 +1,5 @@
 /*
-*	公用的样式/组件
+* 公用的样式/组件
 *   c_开头为公用样式名， cp_开头为组件样式
 */
 
@@ -11,104 +11,133 @@
 @import "reset";
 @import "icons";
 @import "sprite";
-
 //----------行高----
-.c_lineH1{
+.c_lineH1 {
   line-height: 1 !important;
 }
-.c_lineH1h{
+
+.c_lineH1h {
   line-height: 1.5 !important;
 }
-.c_lineH2{
+
+.c_lineH2 {
   line-height: 2 !important;
 }
-.c_lineH2h{
+
+.c_lineH2h {
   line-height: 2.5 !important;
 }
+
 //--------color---
 //.c_green{
 //  //color: $mygreen !important;
 //}
-
 //------定位----
-.c_pos_rel{
+.c_pos_rel {
   position: relative;
 }
-.c_pos_abs{
+
+.c_pos_abs {
   position: absolute;
 }
 
-.c_text_left{
+.c_text_left {
   text-align: left !important;
 }
-.c_text_right{
-  text-align: right !important;;
+
+.c_text_right {
+  text-align: right !important;
+  ;
 }
-.c_text_center{
-  text-align: center !important;;
+
+.c_text_center {
+  text-align: center !important;
+  ;
 }
-.c_text_justify{
-  text-align: justify !important;;
+
+.c_text_justify {
+  text-align: justify !important;
+  ;
 }
-.c_text_ellipsis{
+
+.c_text_ellipsis {
   @extend %ellipsis;
 }
-.c_text_indent{
+
+.c_text_indent {
   text-indent: 2em;
 }
-.c_v_mid{
+
+.c_v_mid {
   vertical-align: middle;
 }
-.c_f_l{
+
+.c_f_l {
   float: left;
 }
-.c_f_r{
+
+.c_f_r {
   float: right;
 }
-.c_font_x{
+
+.c_font_x {
   font-size: px2rem($fontX);
 }
-.c_font_s{
+
+.c_font_s {
   font-size: px2rem($fontS);
 }
-.c_font_m{
+
+.c_font_m {
   font-size: px2rem($fontM);
 }
-.c_font_l{
+
+.c_font_l {
   font-size: px2rem($fontL);
 }
-.c_p_t{
+
+.c_p_t {
   padding-top: $baseGap;
 }
-.c_p_b{
+
+.c_p_b {
   padding-bottom: $baseGap;
 }
-.c_p_l{
+
+.c_p_l {
   padding-left: $baseGap;
 }
-.c_p_r{
+
+.c_p_r {
   padding-right: $baseGap;
 }
-.c_m_t{
+
+.c_m_t {
   margin-top: $baseGap;
 }
-.c_m_b{
+
+.c_m_b {
   margin-bottom: $baseGap;
 }
-.c_m_l{
+
+.c_m_l {
   margin-left: $baseGap;
 }
-.c_m_r{
+
+.c_m_r {
   margin-right: $baseGap;
 }
-.c_hide{
+
+.c_hide {
   display: none !important;
 }
-.c_bg{
+
+.c_bg {
   background: $bgColor;
 }
+
 //-------按钮----
-.c_btn{
+.c_btn {
   display: inline-block;
   padding: 0 px2rem(12px);
   text-align: center;
@@ -118,71 +147,78 @@
   white-space: nowrap;
 }
 
-.c_btn_x{
+.c_btn_x {
   height: px2rem(36px);
   line-height: px2rem(36px);
   font-size: px2rem($fontX);
 }
-.c_btn_s{
+
+.c_btn_s {
   height: px2rem(42px);
   line-height: px2rem(42px);
   font-size: px2rem($fontS);
 }
-.c_btn_m{
+
+.c_btn_m {
   height: px2rem(48px);
   line-height: px2rem(48px);
   font-size: px2rem($fontM);
 }
-.c_btn_l{
+
+.c_btn_l {
   height: px2rem(54px);
   line-height: px2rem(54px);
   font-size: px2rem($fontL);
 }
-.c_btn_default{
+
+.c_btn_default {
   color: $textColor;
   background-color: $white;
   border-color: $gray;
 }
-.c_btn_primary{
- color: $primary;
+
+.c_btn_primary {
+  color: $primary;
   background-color: $white;
   border-color: $primary;
 }
 
 //-----公共input的样式---
-.c_inp{
+.c_inp {
   width: 100%;
   background-color: $bgColor;
   border: 1px solid $borderColor;
 }
-.c_inp_no{
+
+.c_inp_no {
   width: 100%;
   background-color: transparent;
   border: none;
 }
-.c_inp_ex{
+
+.c_inp_ex {
   width: 5em;
 }
 
-
 //----文本段落----
-.c_p{
+.c_p {
   text-indent: -2em;
   padding-left: 2em;
 }
+
 //-----加成内容-----
-.c_strong{
+.c_strong {
   font-weight: bold;
 }
 
 //---两列中自适应列的内容, 里面的内容不支持不换行---
-.c_cell_con{
+.c_cell_con {
   display: table-cell;
   width: 2000px;
 }
 
 //---绝对定位右侧---
-.c_pos_right{
+.c_pos_right {
   position: absolute;
   top: 0;
   right: 1rem;
@@ -192,19 +228,20 @@
 }
 
 //------display table---
-.c_display_table{
+.c_display_table {
   display: table;
   width: 100%;
 }
+
 //------display table cell---
-.c_display_cell{
+.c_display_cell {
   display: table-cell;
 }
 
 //警告样式
-.c_flash{
+.c_flash {
   position: fixed;
-  top : 50%;
+  top: 50%;
   left: 50%;
   background-color: rgba(0, 0, 0, .8);
   color: $white;
@@ -216,32 +253,37 @@
   border-radius: 4px;
   text-align: center;
 }
+
 //--------去掉border--
-.c_no_border_b{
+.c_no_border_b {
   border-bottom: none !important;
 }
-.c_no_border_t{
+
+.c_no_border_t {
   border-top: none !important;
 }
+
 //-----flex横排---
-.cp_flex_row{
+.cp_flex_row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
 }
-.cp_flex_item{
+
+.cp_flex_item {
   flex: 1;
   text-align: center;
 }
+
 //----图标旁边的文字----
-.cp_icon_text{
+.cp_icon_text {
   display: inline-block;
   vertical-align: middle;
 }
 
 //----弹出框----
-.cp_confirm_box{
+.cp_confirm_box {
   position: fixed;
   z-index: $zIndexConfirm;
   top: 0;
@@ -250,7 +292,8 @@
   height: 100%;
   background-color: rgba(0, 0, 0, .2);
 }
-.cp_confirm_flex{
+
+.cp_confirm_flex {
   position: relative;
   width: 100%;
   height: 100%;
@@ -259,19 +302,22 @@
   justify-content: center;
   align-items: center;
 }
-.cp_confirm_con{
+
+.cp_confirm_con {
   font-size: px2rem(36px);
   border-radius: px2rem(10px);
   background: $bgColor;
 }
-.cp_confirm_body{
+
+.cp_confirm_body {
   text-align: center;
   padding: 1rem;
 }
-.cp_confirm_btn{
+
+.cp_confirm_btn {
   border-top: 1px solid $borderColor;
   display: flex;
-  .btn{
+  .btn {
     padding: 0 2rem;
     flex: 1;
     text-align: center;
@@ -283,33 +329,30 @@
     }
   }
 }
-.cp_confirm_title{
+
+.cp_confirm_title {
   line-height: px2rem(88px);
   text-align: center;
   border-bottom: 1px solid $borderColor;
 }
 
-
 //-----带右侧tip的标题-----
-.cp_title_hasTip{
+.cp_title_hasTip {
   display: flex;
-
-  .c_con{
+  .c_con {
     flex: 1;
     @extend %ellipsis;
   }
-
-  .c_tip{
+  .c_tip {
     float: right;
   }
 }
 
-
-.cp_alertMsg{
+.cp_alertMsg {
   position: fixed;
-  top : 50%;
+  top: 50%;
   left: 50%;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0, 0, 0, .8);
   color: #ffffff;
   z-index: 9999998;
   width: px2rem(400px);
@@ -321,7 +364,7 @@
 }
 
 //----banner---
-.cp_banner{
+.cp_banner {
   position: relative;
   width: 100%;
   z-index: 5;
@@ -329,60 +372,57 @@
   padding-top: 46.875%;
   overflow: hidden;
 }
-.cp_banner-list{
+
+.cp_banner-list {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
-  .item{
+  .item {
     float: left;
     height: 100%;
     width: 100%;
   }
-
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
 }
 
-.cp_banner-dot{
+.cp_banner-dot {
   position: absolute;
   z-index: 11;
   bottom: .5rem;
   width: 100%;
   text-align: center;
-
-  .item{
+  .item {
     margin: 2px;
     display: inline-block;
     width: .5rem; //奇数圆角不够圆
     height: .5rem;
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, .5);
-    @media screen and (min-width: 320px){
+    @media screen and (min-width: 320px) {
       width: 6px;
       height: 6px;
     }
-    @media screen and (min-width: 375px){
+    @media screen and (min-width: 375px) {
       width: 8px;
       height: 8px;
     }
-    @media screen and (min-width: 414px){
+    @media screen and (min-width: 414px) {
       width: 10px;
       height: 10px;
     }
-
-    &.cur{
+    &.cur {
       background-color: rgba(255, 255, 255, 1);
     }
   }
 }
 
 //---------cp_nav-------
-.cp_nav{
+.cp_nav {
   position: fixed;
   z-index: 6;
   bottom: 0;
@@ -392,4 +432,7 @@
   border-top: 1px solid $borderColor;
   background-color: $white;
   display: flex;
+  .cur {
+    color: $primary;
+  }
 }

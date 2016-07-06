@@ -1,6 +1,12 @@
 <template>
     <div class="view-home">
         <banner></banner>
+        <confirm :is-show.sync="showConfirm">
+            <div slot="title">标题</div>
+            <div slot="content">{{confirmCon}}</div>
+            <div slot="btn" class="btn c_yellow" @click="showConfirm=false">确定</div>
+            <div slot="btn" class="btn"  @click="showConfirm=false">取消</div>
+        </confirm>
         <ul class="list">
             <li v-for="item in listOne" class="item">
                 <img class="img" >
@@ -43,16 +49,17 @@
 import {incrementCounter} from '../vuex/actions.js'
 import api from '../api'
 import banner from '../cpn/banner.vue'
+import confirm from '../cpn/confirm.vue'
 
 export default {
 
     name: 'home',
-    components: {
-        banner: banner
-    },
 
+    //==数据配置===
     data () {
         return {
+            showConfirm: false,
+            confirmCon: '内容内容内容内容内容内容内容内容内容内容',
             list: [1, 2, 3, 4]
         }
     },
@@ -67,6 +74,8 @@ export default {
             return this.list.length > 3 ? this.list.slice(6) : this.list.slice(2, 3)
         }
     },
+
+    //==路由配置===
     route: {
         data () {   //获取数据
 
@@ -78,10 +87,17 @@ export default {
 //            })
         }
     },
+
+    //==状态管理配置===
     vuex: {
         actions: {
 
         }
+    },
+
+    components: {
+        banner: banner,
+        confirm: confirm
     },
     created () {
         console.log(new Date().getTime()+'created');

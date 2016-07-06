@@ -19,18 +19,7 @@ import conFirm from './cpn/confirm.vue'
 Vue.config.debug = true
 
 Vue.mixin({
-  created() {
-    this.setNavType()
-  },
-  vuex: {
-    actions: {
-      setNavType({ dispatch }) {
-        if (this.$route && this.$route.navType) {
-          dispatch('NAV_CHANGE', this.$route.navType)
-        }
-      }
-    }
-  }
+
 })
 
 //========================install=========================
